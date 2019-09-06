@@ -5,48 +5,22 @@ namespace UnitConversionExamples
 {
     class Program
     {        
-        static string inch = "in";
-        static string foot = "ft";
-        static string millimeter = "mm";
-        static string meter = "m";
-        static string poundPerCubicInch = "lb/in^3";
-        static string poundPerCubicFoot = "lb/ft^3";
-        static string kipPerCubicInch =  "kip/in^3";
-        static string kipPerCubicFoot = "kip/ft^3";
-        static string kilogramPerCubicMillimeter = "kg/mm^3";
-        static string kilogramPerCubicMeter = "kg/m^3";
-        static string squareInch = @"in^2";
-        static string squareFoot = @"ft^2";
-        static string squareMillimeter = @"mm^2";
-        static string squareMeter = @"m^2";
-        static string poundPerInch = "lb/in";
-        static string poundPerFoot = "lb/ft";
-        static string kipPerInch = "k/in";
-        static string kipPerFoot = "k/ft";
-        static string newtonPerMeter = "N/m";
-        static string kilonewtonPerMeter = "kN/m";
-        static string pound = "lb";
-        static string kip = "kip";
-        static string newton = "N";
-        static string kilonewton = "kN";
-
+       
         static void Main(string[] args)
         {
             Console.WriteLine("==Linear Conversions==");
-            Console.WriteLine("11." + millimeter + "to" + meter);
-            Console.WriteLine("12." + millimeter + "to" + inch);
-            Console.WriteLine("13." + millimeter + "to" + foot);
-            Console.WriteLine("14." + meter + "to" + millimeter);
-            Console.WriteLine("15." + meter + "to" + inch);
-            Console.WriteLine("16." + meter + "to" + foot);
-            Console.WriteLine("17." + inch + "to" + millimeter);
-            Console.WriteLine("18." + inch + "to" + meter);
-            Console.WriteLine("19." + inch + "to" + foot);
-            Console.WriteLine("20." + foot + "to" + millimeter);
-            Console.WriteLine("21." + foot + "to" + meter);
-            Console.WriteLine("22." + foot + "to" + inch);
-            Console.WriteLine("==Force Conversions==");
-            Console.WriteLine("==Stress Conversions==");
+            Console.WriteLine("11." + LengthUnit.Millimeter + " to " + LengthUnit.Meter);
+            Console.WriteLine("12." + LengthUnit.Millimeter + " to " + LengthUnit.Inch);
+            Console.WriteLine("13." + LengthUnit.Millimeter + " to " + LengthUnit.Foot);
+            Console.WriteLine("14." + LengthUnit.Meter + " to " + LengthUnit.Millimeter);
+            Console.WriteLine("15." + LengthUnit.Meter + " to " + LengthUnit.Inch);
+            Console.WriteLine("16." + LengthUnit.Meter + " to " + LengthUnit.Foot);
+            Console.WriteLine("17." + LengthUnit.Inch + " to " + LengthUnit.Millimeter);
+            Console.WriteLine("18." + LengthUnit.Inch + " to " + LengthUnit.Meter);
+            Console.WriteLine("19." + LengthUnit.Inch + " to " + LengthUnit.Foot);
+            Console.WriteLine("20." + LengthUnit.Foot + " to " + LengthUnit.Millimeter);
+            Console.WriteLine("21." + LengthUnit.Foot + " to " + LengthUnit.Meter);
+            Console.WriteLine("22." + LengthUnit.Foot + " to " + LengthUnit.Inch);
             Console.WriteLine(" Type the index number to do the conversion");
             string userConversionType =  Console.ReadLine();
 
@@ -106,9 +80,10 @@ namespace UnitConversionExamples
         private static void GetConvertedValue(LengthUnit actualUnit, LengthUnit requiredUnit)
         {
 
-            Console.WriteLine("Converting " + actualUnit + "to" + requiredUnit);
+            Console.WriteLine("Converting " + actualUnit + " to " + requiredUnit);
             while (true)
             {
+                Console.WriteLine("Enter Value to be converted");
                 String userValue = Console.ReadLine();
                 double val = 0.0;
                 double.TryParse(userValue, out val);
